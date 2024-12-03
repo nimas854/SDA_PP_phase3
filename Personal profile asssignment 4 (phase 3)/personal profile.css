@@ -1,0 +1,131 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.container {
+    max-width: 100%; 
+    margin: 0 auto; 
+}
+
+body{
+    background-image: url(https://i.pinimg.com/originals/0e/6b/da/0e6bdaad458721ecf7eb50e0254849bc.gif);
+    background-size: cover;
+    font-family: 'Segoe UI Light';
+}
+
+
+
+@keyframes appear{
+    from{
+        opacity: 0.5;
+        scale: 0.5;
+    }
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+.int{
+    animation: appear  linear;
+    animation-timeline: view();
+}
+
+.Aboutme{
+    animation: appear linear;
+    animation-timeline: view();
+}
+
+.Hobby{
+    animation: appear linear;
+    animation-timeline: view();
+}
+
+.Exp{
+    animation: appear linear;
+    animation-timeline: view();
+}
+
+.amb{
+    animation: appear linear;
+    animation-timeline: view();
+}
+
+
+
+ 
+
+
+.Top_text{
+    position: absolute;
+    top: 0%;
+    right: 40%;
+
+}
+
+.secoundtext{
+    position: absolute; 
+    right: 40%
+}
+
+.slide-1{
+    position: absolute;
+    left: 45%
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+   
+
+.sliding{
+    position:absolute;
+    transform: translate(-0%,-0%);
+}
+.slide{
+    width: 100%;
+    display: flex;
+    animation: slide 100s infinite;
+}
+
+img{
+    width: 100%;
+}
+
+@keyframes slide{
+0% {
+transform: translateX(0);
+}
+25%{
+transform: translateX(-100);
+}
+30% {
+transform: translateX(-100%);
+}
+50%{
+transform: translateX(-100%);
+}
+75%{
+    transform: translateX(-200%);
+    }
+
+}
+
+
+
+
+
+
+
+
+
+    
+    
