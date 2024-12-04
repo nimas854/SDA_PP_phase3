@@ -8,15 +8,11 @@ body {
     overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
-.container {
-    max-width: 100%; 
-    margin: 0 auto; 
-}
+
 
 body{
     background-image: url(https://i.pinimg.com/originals/0e/6b/da/0e6bdaad458721ecf7eb50e0254849bc.gif);
     background-size: cover;
-    font-family: 'Segoe UI Light';
 }
 
 
