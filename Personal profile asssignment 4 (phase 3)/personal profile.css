@@ -69,23 +69,6 @@ body{
 
 }
 
-.secoundtext{
-    position: absolute; 
-    right: 40%
-}
-
-.slide-1{
-    position: absolute;
-    left: 45%
-}
-
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-   
-
 .sliding{
     position:absolute;
     transform: translate(-0%,-0%);
@@ -93,32 +76,24 @@ body{
 .slide{
     width: 100%;
     display: flex;
-    animation: slide 100s infinite;
+    animation: slide 80s infinite;
 }
 
 img{
     width: 100%;
 }
 
-@keyframes slide{
-0% {
-transform: translateX(0);
-}
-25%{
-transform: translateX(-100);
-}
-30% {
-transform: translateX(-100%);
-}
-50%{
-transform: translateX(-100%);
-}
-75%{
-    transform: translateX(-200%);
+@keyframes slide {
+    0% {
+        transform: translateX(0);
     }
-
+    20% { 
+        transform: translateX(-100%); 
+    }
+    75% {
+        transform: translateX(-200%);
+    }
 }
-
 
 
 
