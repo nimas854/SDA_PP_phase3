@@ -1,102 +1,119 @@
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
-
-
-body{
-    background-image: url(https://i.pinimg.com/originals/0e/6b/da/0e6bdaad458721ecf7eb50e0254849bc.gif);
-    background-size: cover;
+body {
+  background-color: #070707;
+  background-size: cover;
 }
 
-
-
-@keyframes appear{
-    from{
-        opacity: 0.5;
-        scale: 0.5;
-    }
-    to {
-        opacity: 1;
-        scale: 1;
-    }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #070707;
+  z-index: 1000;
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative; /* Add this */
+}
+nav ul li {
+  margin: 0 12px;
+}
+nav ul li a {
+  display: block;
+  color: #fff;
+  padding: 16px 24px;
+  text-decoration: none;
+  position: relative;
+  overflow: visible;
 }
 
-.int{
-    animation: appear  linear;
-    animation-timeline: view();
+@keyframes appear {
+  from {
+    opacity: 0.5;
+    scale: 0.5;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
 }
 
-.Aboutme{
-    animation: appear linear;
-    animation-timeline: view();
+.int {
+  animation: appear linear;
+  animation-timeline: view();
 }
 
-.Hobby{
-    animation: appear linear;
-    animation-timeline: view();
+.Aboutme {
+  animation: appear linear;
+  animation-timeline: view();
 }
 
-.Exp{
-    animation: appear linear;
-    animation-timeline: view();
+.Hobby {
+  animation: appear linear;
+  animation-timeline: view();
 }
 
-.amb{
-    animation: appear linear;
-    animation-timeline: view();
+.Exp {
+  animation: appear linear;
+  animation-timeline: view();
 }
 
-
-
- 
-
-
-.Top_text{
-    position: absolute;
-    top: 0%;
-    right: 40%;
-
+.amb {
+  animation: appear linear;
+  animation-timeline: view();
 }
 
-.sliding{
-    position:absolute;
-    transform: translate(-0%,-0%);
-}
-.slide{
-    width: 100%;
-    display: flex;
-    animation: slide 80s infinite;
+.Top_text {
+  position: absolute;
+  top: 0%;
+  right: 40%;
 }
 
-img{
-    width: 100%;
+.sliding {
+  position: absolute;
+  transform: translate(-0%, -0%);
+}
+.slide {
+  width: 100%;
+  display: flex;
+  animation: slide 80s infinite;
+}
+
+img {
+  width: 100%;
 }
 
 @keyframes slide {
-    0% {
-        transform: translateX(0);
-    }
-    20% { 
-        transform: translateX(-100%); 
-    }
-    75% {
-        transform: translateX(-200%);
-    }
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-100%);
+  }
+  75% {
+    transform: translateX(-200%);
+  }
 }
 
-
-
-
-
-
-
-
-    
-    
+.container-section {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}

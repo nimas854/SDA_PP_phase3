@@ -6,17 +6,38 @@
     <title>Personal Profile</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="personal profile.css">
-    
+
+  
 </head>
 
 <body class="bg-black">
-  <div class="int">
+    <nav>
+        <ul class="navbar" id="navbar" style="position: relative;">
+            <li><a href="#" class="nav-link active">Home</a></li>
+            <li><a href="#aboutme" class="nav-link">About Me</a></li>
+            <li><a href="#H" class="nav-link">Hobby</a></li>
+            <li><a href="#experience" class="nav-link">My Experience</a></li>
+            <li><a href="#ambition" class="nav-link">Ambition</a></li>
+            <div class="underline" style="
+                position: absolute;
+                left: 0;
+                height: 6px;
+                background: linear-gradient(90deg, #00bfff 0%, #fff 100%);
+                border-radius: 3px;
+                transition: left 0.3s, width 0.3s;
+                z-index: 1;
+            "></div>
+        </ul>
+    </nav>
+    <script src="k.js"></script>
+
+  <div class="int container-section">
     <div class="Top_text">
-        <h1 class="text-white text-5xl font-bold">Personal Profile</h1>
+        <h1 class="text-white text-5xl font-bold" id="PP">Personal Profile</h1>
     </div>
     <div class="text_video">
         <div class="flex flex-col items-center justify-center h-screen">
-            <div class="relative flex items-center justify-center rounded-full w-48 h-48 bg-blue-600">
+            <div class="relative flex items-center justify-center rounded-full w-48 h-48 bg-sky-400">
                 <img src="Screenshot 2024-10-05 135817.png" alt="Sherab Nima Rigzin" class="rounded-full w-32 h-32 ">
             </div>
             <h1 class="text-white text-3xl font-bold mt-4">Sherab Nima Rigzin</h1>
@@ -27,8 +48,8 @@
                 <div class="bg-gray-300 px-4 py-2 rounded-md">Gewog: Kawang</div>
             </div>
             <div class="mt-8">
-                <div class="bg-blue-500 px-6 py-3 rounded-md ">About Me</div>
                 
+              
             </div>
           </div>
         </div>
@@ -37,7 +58,8 @@
 
 </div>
 
-<div class="Aboutme">
+<div class="Aboutme container-section" id="aboutme">
+  <h1 class="text-3xl text-white font-bold ">About me</h1>
 
          <div class="sliding">
             <div class="slide">
@@ -48,13 +70,13 @@
                 </div>
 
             </div>
-
+          
          </div>
     
 
 
     </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<div class="Hobby">
+<div class="Hobby container-section" id="H">
     <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
         
     
@@ -79,7 +101,7 @@
         
     </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-<div class="Exp">
+<div class="Exp container-section" id="experience">
     <div class="max-w-4xl mx-auto bg-black overflow-hidden flex flex-col md:flex-row">
         
 
@@ -101,7 +123,7 @@
           </div>
         </div>
         </div><br><br><br><br><br><br><br><br>
-<div class="amb">
+<div class="amb container-section">
         <div class="max-w-6xl mx-auto bg-cover bg-center p-8" style="background-image: url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2lpb2dibGJjaXFnMnFudW5ubThkajB2MTEzcjI2Z2dmNzIxenRsaCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/JpScsr53qh6sR6dSeJ/giphy.webp');">
             <div class="grid md:grid-cols-2 gap-8 bg-black bg-opacity-50 p-8 rounded-lg">
             
@@ -113,7 +135,7 @@
                     </h1>
                 </div>
     
-                <div class="space-y-4">
+                <div class="space-y-4" id="ambition">
                     <h1 class="text-4xl text-white font-semibold"> Ambition </h1>
                     <p class="text-gray-300 italic leading-relaxed">
                         My ambition is to become a skilled software engineer, contributing to the advancement of Bhutan's technology landscape. In an era where digital transformation is crucial, software engineering offers a dynamic platform to solve complex problems, innovate, and create impactful solutions. Bhutan, though a small nation, is making strides in technology, and I want to be at the forefront of this change. With the government's focus on developing tech hubs and smart cities, like the upcoming mega-city project in Gelephu, there is immense potential for software engineers to make a difference.
@@ -229,4 +251,44 @@
 
 
 
+<script>
+        // Animated underline for active nav item
+        const navLinks = document.querySelectorAll('#navbar a');
+        const sections = ['PP', 'aboutme', 'H', 'experience', 'ambition'];
+
+        function activateNavBySection(sectionId) {
+            navLinks.forEach(link => {
+                link.classList.remove('active-nav');
+                // Remove and re-add to retrigger animation
+                void link.offsetWidth;
+                if (link.getAttribute('href') === '#' + sectionId) {
+                    link.classList.add('active-nav');
+                }
+            });
+        }
+
+        function onScroll() {
+            let currentSection = sections[0];
+            for (const id of sections) {
+                const el = document.getElementById(id);
+                if (el) {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top <= 90 && rect.bottom > 90) {
+                        currentSection = id;
+                        break;
+                    }
+                }
+            }
+            activateNavBySection(currentSection);
+        }
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                activateNavBySection(this.getAttribute('href').substring(1));
+            });
+        });
+
+        window.addEventListener('scroll', onScroll);
+        window.addEventListener('DOMContentLoaded', onScroll);
+    </script>
 </html>
